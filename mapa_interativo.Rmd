@@ -26,9 +26,11 @@ library(raster)
 library(rgeos)
 library(svMisc)
 
-pol <- readOGR(dsn=dir_pol,layer="Área do Banco dos Abrolhos e Royal") %>%
+pol <- readOGR(dsn=dir_pol,layer="Área do Banco dos Abrolhos e Royal", verbose = F) %>%
   spTransform(., CRS("+proj=longlat +datum=WGS84"))
+```
 
+```{r}
 
 # Background 2: World Imagery
 leaflet()  %>% 
