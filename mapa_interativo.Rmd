@@ -2,7 +2,10 @@
 title: "Área do Banco dos Abrolhos em mapa interativo"
 author: "Marília Previero"
 date: "2 de junho de 2019"
-output: html_document
+
+output:
+   html_document:
+   toc: true
 ---
 
 
