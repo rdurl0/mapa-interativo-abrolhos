@@ -1,0 +1,39 @@
+---
+title: "Área do Banco dos Abrolhos em mapa interativo"
+author: "Marília Previero"
+date: "2 de junho de 2019"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+Mapa interativo com a região do Banco dos Abrolhos:
+
+```{r}
+dir_pol <- "C:/OSGEO4~1/bin"
+
+library(leaflet)
+library(rgdal)
+library(raster)
+library(rgeos)
+library(svMisc)
+
+pol <- readOGR(dsn=dir_pol,layer="Área do Banco dos Abrolhos e Royal") %>%
+  spTransform(., CRS("+proj=longlat +datum=WGS84"))
+
+
+# Background 2: World Imagery
+leaflet()  %>% 
+  addProviderTiles(providers$Esri.OceanBasemap) %>% 
+  #addTiles() %>% 
+  addPolygons(data = pol, col="Red", fill = TRUE) %>% 
+  setView(lng = -35, lat=-18, zoom = 5) %>% 
+  addMiniMap()
+
+```
+
