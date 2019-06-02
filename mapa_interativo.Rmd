@@ -1,8 +1,6 @@
 ---
 title: "Área do Banco dos Abrolhos em mapa interativo"
-author: "Marília Previero"
-date: "2 de junho de 2019"
-
+author: "Marília Previero e Raul de Sá Durlo"
 output:
    html_document:
    toc: true
@@ -26,7 +24,9 @@ library(raster)
 library(rgeos)
 library(svMisc)
 
-pol <- readOGR(dsn=dir_pol,layer="Área do Banco dos Abrolhos e Royal", verbose = F) %>%
+pol <- readOGR(dsn=dir_pol,
+               layer="Área do Banco dos Abrolhos e Royal",
+               verbose = F) %>%
   spTransform(., CRS("+proj=longlat +datum=WGS84"))
 ```
 
