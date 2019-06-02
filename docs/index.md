@@ -1,1 +1,1 @@
-[Link to test map](https://github.com/rdurl0/meu_rep/blob/master/docs/mapa_interativo.html)
+[Link to test map](https://rdurl0.github.io/meu_rep/mapa_interativo.html)
